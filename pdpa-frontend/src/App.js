@@ -1,6 +1,6 @@
 // import { useState } from 'react';
 import './App.css';
-import Input from './Input/Input';
+import Input from './components/Input/Input';
 
 // const DUMMY_EXPENSES = [
 // 	{
