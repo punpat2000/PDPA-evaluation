@@ -20,7 +20,8 @@
   border-radius: 12px;
   /* margin-right: 1rem; */
   max-width: inherit;
-  margin: 10%;
+  margin: 0.5rem;
+  transition: background-color 200ms, border-color 200ms;
 }
 
 .new-expense button:hover,
