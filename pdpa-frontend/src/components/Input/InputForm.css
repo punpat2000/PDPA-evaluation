@@ -1,9 +1,10 @@
 .new-expense__controls {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   gap: 1rem;
   margin-bottom: 1rem;
   text-align: left;
+  flex-direction: column;
 }
 
 .new-expense__control label {
@@ -17,10 +18,13 @@
   padding: 0.5rem;
   border-radius: 6px;
   border: 1px solid #ccc;
-  width: 20rem;
-  max-width: 100%;
+  width: 100%;
+  min-width: fit-content;
+  max-width: inherit;
 }
 
 .new-expense__actions {
+  max-width: inherit;
+  display: inline-block;
   text-align: right;
 }
