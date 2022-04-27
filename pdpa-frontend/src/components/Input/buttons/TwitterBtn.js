@@ -6,12 +6,17 @@ const TwitterBtn = (props) => {
 		props.isSelected ? styles.selected : ''
 	}`;
 
-  const twitterSelectHandler = () => {
-    props.onSelectPlatform('Twitter')
-  }
+	const twitterSelectHandler = () => {
+		props.onSelectPlatform('Twitter');
+	};
 
 	return (
-		<button className={appliedStyle} onClick={twitterSelectHandler} type="button">
+		<button
+			className={appliedStyle}
+			onClick={twitterSelectHandler}
+			type="button"
+			aria-label="Twitter"
+		>
 			<span>
 				<TwitterIcon />
 			</span>

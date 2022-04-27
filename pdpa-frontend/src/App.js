@@ -1,4 +1,4 @@
-// import { useState } from 'react';
+import { Fragment } from 'react';
 import './App.css';
 import InputForm from './components/Input/InputForm';
 
@@ -27,14 +27,15 @@ import InputForm from './components/Input/InputForm';
 function App() {
 	// const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
-	const addExpenseHandler = (expense) => {
+	const submitHandler = (data) => {
 		console.log('form recevied, from app');
+		console.log(JSON.stringify(data));
 	};
 
 	return (
-		<div>
-			<InputForm onAddExpense={addExpenseHandler} />
-		</div>
+		<Fragment>
+			<InputForm onSubmit={submitHandler} />
+		</Fragment>
 	);
 }
 

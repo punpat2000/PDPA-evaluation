@@ -16,6 +16,7 @@ const FacebookBtn = (props) => {
 			className={appliedStyle}
 			onClick={facebookSelectHandler}
 			type="button"
+      aria-label="Facebook"
 		>
 			<span>
 				<FacebookIcon />

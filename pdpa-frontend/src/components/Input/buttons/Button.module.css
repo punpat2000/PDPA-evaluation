@@ -8,4 +8,5 @@
 
 .selected {
   box-shadow: 0 0 20px #ffffff, 0 0 40px #bcc5d8;
+  z-index: -1;
 }

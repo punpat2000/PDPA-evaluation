@@ -2,11 +2,15 @@ import { useState, useCallback } from 'react';
 import PlatformButtons from './buttons/PlatformButtons';
 import ErrorModal from '../UI/ErrorModal';
 import './InputForm.css';
-import './Input.css'
+import './Input.css';
 
 const today = new Date().toLocaleDateString('en-ca');
 
+const platformNotSelectedText = 'Please select the platform';
+const usernameNotEntered = 'Please enter your username';
+
 const InputForm = (props) => {
+	const [errorMessage, setErrorMessage] = useState('');
 	const [isError, setIsError] = useState(false);
 	const [selectedPlatform, setSelectedPlatform] = useState('');
 	const [enteredUsername, setEnteredUsername] = useState('');
@@ -14,6 +18,18 @@ const InputForm = (props) => {
 	const [enteredEmail, setEnteredEmail] = useState('');
 	const [enteredPhoneNumber, setEnteredPhoneNumber] = useState('');
 	const [enteredDate, setEnteredDate] = useState('');
+
+	const isValidForm = () => {
+		if (selectedPlatform === '') {
+			setErrorMessage(platformNotSelectedText);
+			return false;
+		}
+		if (enteredUsername === '') {
+			setErrorMessage(usernameNotEntered);
+			return false;
+		}
+		return true;
+	};
 
 	const platformSelectHandler = useCallback((platform) => {
 		setSelectedPlatform(platform);
@@ -54,22 +70,39 @@ const InputForm = (props) => {
 
 	const submitHandler = (event) => {
 		event.preventDefault();
+		if (!isValidForm()) {
+			setIsError(true);
+			return;
+		}
 
-		const expenseData = {
-			title: enteredName,
-			amount: enteredEmail,
-			date: new Date(enteredDate),
+		const platform = selectedPlatform === 'Twitter' ? 0 : 1;
+		const username = enteredUsername.trim();
+		const name = enteredName.trim().split(' ');
+		const first_name = name[0];
+		const last_name = name[1];
+		const birth_date = enteredDate;
+		const phone_num = enteredPhoneNumber.trim();
+		const email = enteredEmail.trim();
+
+		const inputData = {
+			platform,
+			username,
+			...(first_name && { first_name }),
+			...(last_name && { last_name }),
+			...(birth_date && { birth_date }),
+			...(phone_num && { phone_num }),
+			...(email && { email }),
 		};
 
-		props.onAddExpense(expenseData);
+		props.onSubmit(inputData);
 		resetForm();
 	};
 
 	return (
 		<div className="new-expense">
 			<ErrorModal
-				title={'Invalid User Input'}
-				message={'messagedlfhgsh ;udf sdujfh suf'}
+				title={'Missing Required Field'}
+				message={errorMessage}
 				onConfirm={errorHandler}
 				isError={isError}
 			/>
@@ -83,24 +116,28 @@ const InputForm = (props) => {
 				/>
 				<div className="new-expense__controls">
 					<div className="new-expense__control">
-						<label>Username</label>
+						<label htmlFor="username">Username</label>
 						<input
+							id="username"
 							type="text"
+							required
 							value={enteredUsername}
 							onChange={usernameChangeHandler}
 						/>
 					</div>
 					<div className="new-expense__control">
-						<label>Full Name</label>
+						<label htmlFor="name">Full Name</label>
 						<input
+							id="name"
 							type="text"
 							value={enteredName}
 							onChange={nameChangeHandler}
 						/>
 					</div>
 					<div className="new-expense__control">
-						<label>Phone Number</label>
+						<label htmlFor="phone-number">Phone Number</label>
 						<input
+							id="phone-number"
 							type="tel"
 							pattern="[0-9]{10}"
 							value={enteredPhoneNumber}
@@ -108,16 +145,18 @@ const InputForm = (props) => {
 						/>
 					</div>
 					<div className="new-expense__control">
-						<label>E-mail</label>
+						<label htmlFor="email">E-mail</label>
 						<input
+							id="email"
 							type="email"
 							value={enteredEmail}
 							onChange={emailChangeHandler}
 						/>
 					</div>
 					<div className="new-expense__control">
-						<label>Birthdate</label>
+						<label htmlFor="birthdate">Birthdate</label>
 						<input
+							id="birthdate"
 							type="date"
 							max={today}
 							value={enteredDate}
