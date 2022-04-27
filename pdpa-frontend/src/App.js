@@ -1,6 +1,6 @@
 // import { useState } from 'react';
 import './App.css';
-import Input from './components/Input/Input';
+import InputForm from './components/Input/InputForm';
 
 // const DUMMY_EXPENSES = [
 // 	{
@@ -33,7 +33,7 @@ function App() {
 
 	return (
 		<div>
-			<Input onAddExpense={addExpenseHandler} />
+			<InputForm onAddExpense={addExpenseHandler} />
 		</div>
 	);
 }

@@ -1,7 +1,8 @@
-import { useState, Fragment, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import PlatformButtons from './buttons/PlatformButtons';
-import './InputForm.css';
 import ErrorModal from '../UI/ErrorModal';
+import './InputForm.css';
+import './Input.css'
 
 const today = new Date().toLocaleDateString('en-ca');
 
@@ -60,12 +61,12 @@ const InputForm = (props) => {
 			date: new Date(enteredDate),
 		};
 
-		props.onSaveExpenseData(expenseData);
+		props.onAddExpense(expenseData);
 		resetForm();
 	};
 
 	return (
-		<Fragment>
+		<div className="new-expense">
 			<ErrorModal
 				title={'Invalid User Input'}
 				message={'messagedlfhgsh ;udf sdujfh suf'}
@@ -133,7 +134,7 @@ const InputForm = (props) => {
 					</button>
 				</div>
 			</form>
-		</Fragment>
+		</div>
 	);
 };
 
