@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 import PlatformButtons from './buttons/PlatformButtons';
 import ErrorModal from '../UI/ErrorModal';
+import background from './bg-1.webp';
 import './InputForm.css';
 import './Input.css';
 
@@ -99,7 +100,10 @@ const InputForm = (props) => {
 	};
 
 	return (
-		<div className="new-expense">
+		<div
+			className="new-expense"
+			style={{ backgroundImage: `url(${background})` }}
+		>
 			<ErrorModal
 				title={'Missing Required Field'}
 				message={errorMessage}
@@ -108,7 +112,7 @@ const InputForm = (props) => {
 			/>
 			<form onSubmit={submitHandler}>
 				<div className="new-expense__controls">
-					<h2>Select Platform</h2>
+					<h1>Select Platform</h1>
 				</div>
 				<PlatformButtons
 					platform={selectedPlatform}
@@ -165,11 +169,11 @@ const InputForm = (props) => {
 					</div>
 				</div>
 				<div className="new-expense__actions">
-					<button className="button" type="button" onClick={resetForm}>
-						Reset
+					<button className="reset" type="button" onClick={resetForm}>
+						RESET
 					</button>
-					<button className="button" type="submit">
-						Analyze
+					<button className="analyze" type="submit">
+						ANALYZE
 					</button>
 				</div>
 			</form>

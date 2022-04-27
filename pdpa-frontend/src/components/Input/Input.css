@@ -1,17 +1,14 @@
 .new-expense {
-  background: rgb(0, 255, 91);
-  /* background: linear-gradient(135deg, rgba(0,255,91,1) 0%, rgba(0,20,255,1) 100%); */
-  background: linear-gradient(135deg, rgba(255, 44, 223, 1) 0%, rgba(0, 20, 255, 1) 100%);
-  /* background-color: #a892ee; */
-  /* background: rgb(0, 229, 255);
-  background: linear-gradient(135deg, rgba(0, 229, 255, 1) 0%, rgba(18, 0, 255, 1) 100%); */
+  background: rgb(41, 42, 60);
+  background: linear-gradient(177deg, rgba(41, 42, 60, 1) 0%, rgba(37, 38, 57, 1) 100%);
   padding: 1rem;
   margin: 2rem auto;
-  width: 50rem;
+  width: 40rem;
   max-width: 95%;
-  border-radius: 12px;
+  border-radius: 50px;
+  opacity: 0.9;
   text-align: center;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 19px 34px rgba(0, 0, 0, 0.25);
 }
 
 .new-expense button {
@@ -27,11 +24,49 @@
 }
 
 .new-expense button:hover {
-  opacity: 0.8;
+  color: #fff;
+  opacity: 1;
+  text-decoration: none;
 }
 
-.new-expense .button {
-  background-color: #49016b;
+.new-expense .reset {
+  line-height: 1.5;
+  text-align: center;
+  box-sizing: border-box;
+  background-clip: padding-box !important;
+  border-radius: 24px;
+  color: #fff;
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.8;
+  outline: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: opacity 0.2s linear;
+  background-image: none !important;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.new-expense .analyze {
+  line-height: 1.5;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: transparent;
+  background-clip: padding-box !important;
+  background-image: linear-gradient(281deg, #420be6, #a16bb3);
+  background-size: 101%;
+  border: 1px solid transparent;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px 0 rgba(111, 57, 205, 0.3);
+  color: #fff;
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.8;
+  outline: none;
+  text-decoration: none;
 }
 
 .new-expense .button.alternative {
