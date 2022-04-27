@@ -1,0 +1,11 @@
+.facebook-btn {
+  background-color: #4267b2;
+}
+
+.twitter-btn {
+  background-color: #03a9f4;
+}
+
+.selected {
+  box-shadow: 0 0 20px #ffffff, 0 0 40px #bcc5d8;
+}

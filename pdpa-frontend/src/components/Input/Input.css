@@ -1,6 +1,10 @@
 .new-expense {
+  background: rgb(0, 255, 91);
+  /* background: linear-gradient(135deg, rgba(0,255,91,1) 0%, rgba(0,20,255,1) 100%); */
   background: linear-gradient(135deg, rgba(255, 44, 223, 1) 0%, rgba(0, 20, 255, 1) 100%);
   /* background-color: #a892ee; */
+  /* background: rgb(0, 229, 255);
+  background: linear-gradient(135deg, rgba(0, 229, 255, 1) 0%, rgba(18, 0, 255, 1) 100%); */
   padding: 1rem;
   margin: 2rem auto;
   width: 50rem;
@@ -14,29 +18,28 @@
   font: inherit;
   cursor: pointer;
   padding: 1rem 2rem;
-  border: 1px solid #40005d;
-  background-color: #40005d;
   color: white;
   border-radius: 12px;
-  /* margin-right: 1rem; */
   max-width: inherit;
   margin: 0.5rem;
-  transition: background-color 200ms, border-color 200ms;
+  transition: opacity 400ms;
+  border-style: none;
 }
 
-.new-expense button:hover,
-.new-expense button:active {
-  background-color: #510674;
-  border-color: #510674;
+.new-expense button:hover {
+  opacity: 0.8;
 }
 
-.new-expense button.alternative {
+.new-expense .button {
+  background-color: #49016b;
+}
+
+.new-expense .button.alternative {
   color: #220131;
-  border-color: transparent;
   background-color: transparent;
 }
 
-.new-expense button.alternative:hover,
-.new-expense button.alternative:active {
+.new-expense .button.alternative:hover,
+.new-expense .button.alternative:active {
   background-color: #ddb3f8;
 }
