@@ -18,6 +18,10 @@ const InputForm = (props) => {
 		setSelectedPlatform(platform);
 	}, []);
 
+	const errorHandler = useCallback(() => {
+		setIsError(false);
+	}, []);
+
 	const usernameChangeHandler = (event) => {
 		setEnteredUsername(event.target.value);
 	};
@@ -65,7 +69,7 @@ const InputForm = (props) => {
 			<ErrorModal
 				title={'Invalid User Input'}
 				message={'messagedlfhgsh ;udf sdujfh suf'}
-				onConfirm={() => {}}
+				onConfirm={errorHandler}
 				isError={isError}
 			/>
 			<form onSubmit={submitHandler}>

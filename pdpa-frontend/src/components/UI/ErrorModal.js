@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment, memo } from 'react';
 import * as ReactDOM from 'react-dom';
 import Card from './Card';
 import Button from './Button';
@@ -25,19 +25,21 @@ const ModalOverlay = (props) => {
 };
 
 const ErrorModal = (props) => {
+
+  console.log('test')
 	if (!props.isError) return;
 
 	return ReactDOM.createPortal(
-		<React.Fragment>
+		<Fragment>
 			<Backdrop onConfirm={props.onConfirm} />
 			<ModalOverlay
 				title={props.title}
 				message={props.message}
 				onConfirm={props.onConfirm}
 			/>
-		</React.Fragment>,
+		</Fragment>,
 		document.getElementById('modal-root')
 	);
 };
 
-export default ErrorModal;
+export default memo(ErrorModal);

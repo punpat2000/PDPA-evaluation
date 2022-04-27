@@ -1,5 +1,4 @@
-import React from 'react';
-import { Fragment } from 'react';
+import { Fragment, memo } from 'react';
 import TwitterBtn from './TwitterBtn';
 import FacebookBtn from './FacebookBtn';
 
@@ -25,4 +24,4 @@ const PlatformButtons = (props) => {
 	);
 };
 
-export default React.memo(PlatformButtons);
+export default memo(PlatformButtons);
