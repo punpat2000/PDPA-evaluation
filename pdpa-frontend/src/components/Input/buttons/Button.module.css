@@ -2,8 +2,16 @@
   background-color: #4267b2;
 }
 
+.facebook-btn:hover {
+  filter: brightness(115%);
+}
+
 .twitter-btn {
   background-color: #03a9f4;
+}
+
+.twitter-btn:hover {
+  filter: brightness(115%);
 }
 
 .selected {

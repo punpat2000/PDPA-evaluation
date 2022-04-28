@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import './App.css';
 import InputForm from './components/Input/InputForm';
+import Results from './components/Result/Results';
 
 // const DUMMY_EXPENSES = [
 // 	{
@@ -33,9 +34,10 @@ function App() {
 	};
 
 	return (
-		<Fragment>
+		<>
 			<InputForm onSubmit={submitHandler} />
-		</Fragment>
+			<Results />
+		</>
 	);
 }
 

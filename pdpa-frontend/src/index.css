@@ -12,4 +12,6 @@ body {
   margin: 0;
   background: rgb(31, 32, 51);
   background: linear-gradient(177deg, rgb(44 46 80) 0%, rgb(22 22 29) 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }

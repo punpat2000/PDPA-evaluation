@@ -19,7 +19,7 @@
   border-radius: 12px;
   max-width: inherit;
   margin: 0.5rem;
-  transition: opacity 400ms;
+  transition: opacity 400ms, filter 400ms;
   border-style: none;
 }
 
