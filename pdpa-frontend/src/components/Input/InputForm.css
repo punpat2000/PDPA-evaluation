@@ -7,6 +7,10 @@
   flex-direction: column;
 }
 
+.platform__title {
+  margin-bottom: 0rem !important;
+}
+
 .new-expense__controls h1{
   text-align: center;
   color: #f1efef;

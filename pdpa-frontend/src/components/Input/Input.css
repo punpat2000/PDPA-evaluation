@@ -2,9 +2,6 @@
   background: rgb(41, 42, 60);
   background: linear-gradient(177deg, rgba(41, 42, 60, 1) 0%, rgba(37, 38, 57, 1) 100%);
   padding: 1rem;
-  margin: 2rem auto;
-  width: 40rem;
-  max-width: 95%;
   border-radius: 50px;
   opacity: 0.9;
   text-align: center;
@@ -19,8 +16,9 @@
   border-radius: 12px;
   max-width: inherit;
   margin: 0.5rem;
-  transition: opacity 400ms, filter 400ms;
+  transition-duration: 400ms;
   border-style: none;
+  text-transform: uppercase;
 }
 
 .new-expense button:hover {

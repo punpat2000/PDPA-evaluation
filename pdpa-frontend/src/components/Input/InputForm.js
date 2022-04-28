@@ -101,7 +101,7 @@ const InputForm = (props) => {
 
 	return (
 		<div
-			className="new-expense"
+			className="padding-rule new-expense"
 			style={{ backgroundImage: `url(${background})` }}
 		>
 			<ErrorModal
@@ -111,7 +111,7 @@ const InputForm = (props) => {
 				isError={isError}
 			/>
 			<form onSubmit={submitHandler}>
-				<div className="new-expense__controls">
+				<div className="platform__title new-expense__controls">
 					<h1>Select Platform</h1>
 				</div>
 				<PlatformButtons
