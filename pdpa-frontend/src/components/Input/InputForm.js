@@ -104,12 +104,14 @@ const InputForm = (props) => {
 			className="padding-rule new-expense"
 			style={{ backgroundImage: `url(${background})` }}
 		>
-			<ErrorModal
-				title={'Missing Required Field'}
-				message={errorMessage}
-				onConfirm={errorHandler}
-				isError={isError}
-			/>
+			{isError && (
+				<ErrorModal
+					title={'Missing Required Field'}
+					message={errorMessage}
+					onConfirm={errorHandler}
+					isError={isError}
+				/>
+			)}
 			<form onSubmit={submitHandler}>
 				<div className="platform__title new-expense__controls">
 					<h1>Select Platform</h1>
