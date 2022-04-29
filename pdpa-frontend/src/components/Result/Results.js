@@ -10,15 +10,15 @@ import { compare } from '../../utils/compare';
  */
 function transform(arr) {
 	if (arr.length === 0) return arr;
-	return arr
-		.map((res) => {
-			return { ...res, id: generateUid() };
-		})
-		.sort(compare);
+	return arr.map((res) => {
+		return { ...res, id: generateUid() };
+	});
 }
 
 const Results = () => {
 	const [results, setResults] = useState(transform(MOCK_DATA));
+
+	console.log(results);
 
 	const sortHandler = (sortBy) => {
 		setResults((prevState) => {
