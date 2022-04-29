@@ -49,5 +49,9 @@
 .new-expense__actions {
   max-width: inherit;
   display: inline-block;
-  text-align: right;
+}
+
+.form__card {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
 }

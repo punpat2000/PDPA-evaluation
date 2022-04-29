@@ -101,7 +101,7 @@ const InputForm = (props) => {
 
 	return (
 		<div
-			className="padding-rule new-expense"
+			className="padding-rule new-expense form__card"
 			style={{ backgroundImage: `url(${background})` }}
 		>
 			{isError && (
