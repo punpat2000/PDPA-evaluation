@@ -1,6 +1,7 @@
 import styles from './Result.module.css';
 import { generateUid } from '../../utils/generate-uid';
 import { LABEL_TEXT } from './label-text';
+import { memo } from 'react';
 
 const isCategory = (label) => {
 	return ['none', 'religion', 'politics', 'sexual', 'health'].includes(label);
@@ -25,4 +26,4 @@ const Status = (props) => {
 	);
 };
 
-export default Status;
+export default memo(Status);

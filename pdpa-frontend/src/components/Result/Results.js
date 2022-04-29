@@ -18,12 +18,9 @@ function transform(arr) {
 const Results = () => {
 	const [results, setResults] = useState(transform(MOCK_DATA));
 
-	console.log(results);
-
 	const sortHandler = (sortBy) => {
 		setResults((prevState) => {
 			if (sortBy === 'label') {
-				console.log('test');
 				const sortedList = [...prevState].sort(compare);
 
 				if (
@@ -32,7 +29,6 @@ const Results = () => {
 				) {
 					return prevState;
 				}
-				console.log(sortedList);
 				return sortedList;
 			}
 		});
