@@ -1,4 +1,3 @@
-import { Fragment } from 'react';
 import styles from './Result.module.css';
 import Status from './Status';
 
@@ -10,19 +9,20 @@ const ResultList = (props) => {
 			</div>
 		);
 	}
+
 	return (
-		<Fragment>
+		<ul className={`${styles['no-bullets']} ${styles.appear}`}>
 			{props.items.map((res) => {
 				return (
-					<div className={`padding-rule ${styles['result-card']}`} key={res.id}>
+					<li className={`padding-rule ${styles['result-card']}`} key={res.id}>
 						<span>{res.content}</span>
 						<br />
 						<small className={styles.timestamp}>{res.date}</small>
 						<Status labels={res.labels} />
-					</div>
+					</li>
 				);
 			})}
-		</Fragment>
+		</ul>
 	);
 };
 

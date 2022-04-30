@@ -1,4 +1,4 @@
-.new-expense__controls {
+.user-form__controls {
   display: flex;
   /* flex-wrap: wrap; */
   gap: 1rem;
@@ -11,13 +11,13 @@
   margin-bottom: 0rem !important;
 }
 
-.new-expense__controls h1{
+.user-form__controls h1{
   text-align: center;
   color: #f1efef;
   font-weight: 600;
 }
 
-.new-expense__control label {
+.user-form__control label {
   font-weight: bold;
   margin-bottom: 0.5rem;
   display: block;
@@ -27,7 +27,7 @@
 
 }
 
-.new-expense__control input {
+.user-form__control input {
   font: inherit;
   padding: 0.5rem;
   border-radius: 4px;
@@ -42,11 +42,11 @@
   color: white;
 }
 
-.new-expense__control input::placeholder {
+.user-form__control input::placeholder {
   color: #9f9f9f;
 }
 
-.new-expense__actions {
+.user-form__actions {
   max-width: inherit;
   display: inline-block;
 }

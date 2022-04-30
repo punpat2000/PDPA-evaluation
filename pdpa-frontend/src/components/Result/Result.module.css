@@ -4,6 +4,19 @@
   background: rgb(56 58 98);
   color: #eae9e9;
   box-shadow: 0 19px 34px rgba(0, 0, 0, 0.25);
+  transition: transform 1s ease;
+}
+
+@keyframes list-item-appear {
+  from {
+    opacity: 0;
+    transform: translateY(0.7rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .sort-holder {
@@ -89,4 +102,14 @@
 
 .normal {
   background: #7c5589;
+}
+
+.no-bullets {
+  list-style-type: none; /* Remove bullets */
+  margin: 0;
+  padding: 0;
+}
+
+.appear {
+  animation: list-item-appear 0.3s ease-out forwards;
 }

@@ -1,14 +1,14 @@
-.new-expense {
+.user-form {
   background: rgb(41, 42, 60);
   background: linear-gradient(177deg, rgba(41, 42, 60, 1) 0%, rgba(37, 38, 57, 1) 100%);
   padding: 1rem;
   border-radius: 50px;
-  opacity: 0.9;
   text-align: center;
   box-shadow: 0 19px 34px rgba(0, 0, 0, 0.25);
+  animation: card-appear 0.5s ease-out forwards;
 }
 
-.new-expense button {
+.user-form button {
   font: inherit;
   cursor: pointer;
   padding: 1rem 2rem;
@@ -21,13 +21,13 @@
   text-transform: uppercase;
 }
 
-.new-expense button:hover {
+.user-form button:hover {
   color: #fff;
   opacity: 1;
   text-decoration: none;
 }
 
-.new-expense .reset {
+.user-form .reset {
   line-height: 1.5;
   text-align: center;
   box-sizing: border-box;
@@ -47,7 +47,7 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.new-expense .analyze {
+.user-form .analyze {
   line-height: 1.5;
   text-align: center;
   box-sizing: border-box;
@@ -67,12 +67,24 @@
   text-decoration: none;
 }
 
-.new-expense .button.alternative {
+.user-form .button.alternative {
   color: #220131;
   background-color: transparent;
 }
 
-.new-expense .button.alternative:hover,
-.new-expense .button.alternative:active {
+.user-form .button.alternative:hover,
+.user-form .button.alternative:active {
   background-color: #ddb3f8;
+}
+
+@keyframes card-appear {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

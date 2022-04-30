@@ -101,7 +101,7 @@ const InputForm = (props) => {
 
 	return (
 		<div
-			className="padding-rule new-expense form__card"
+			className="padding-rule user-form form__card"
 			style={{ backgroundImage: `url(${background})` }}
 		>
 			{isError && (
@@ -113,15 +113,15 @@ const InputForm = (props) => {
 				/>
 			)}
 			<form onSubmit={submitHandler}>
-				<div className="platform__title new-expense__controls">
+				<div className="platform__title user-form__controls">
 					<h1>Select Platform</h1>
 				</div>
 				<PlatformButtons
 					platform={selectedPlatform}
 					onSelectPlatform={platformSelectHandler}
 				/>
-				<div className="new-expense__controls">
-					<div className="new-expense__control">
+				<div className="user-form__controls">
+					<div className="user-form__control">
 						<label htmlFor="username">Username</label>
 						<input
 							id="username"
@@ -131,7 +131,7 @@ const InputForm = (props) => {
 							onChange={usernameChangeHandler}
 						/>
 					</div>
-					<div className="new-expense__control">
+					<div className="user-form__control">
 						<label htmlFor="name">Full Name</label>
 						<input
 							id="name"
@@ -140,7 +140,7 @@ const InputForm = (props) => {
 							onChange={nameChangeHandler}
 						/>
 					</div>
-					<div className="new-expense__control">
+					<div className="user-form__control">
 						<label htmlFor="phone-number">Phone Number</label>
 						<input
 							id="phone-number"
@@ -150,7 +150,7 @@ const InputForm = (props) => {
 							onChange={phoneNumberChangeHandler}
 						/>
 					</div>
-					<div className="new-expense__control">
+					<div className="user-form__control">
 						<label htmlFor="email">E-mail</label>
 						<input
 							id="email"
@@ -159,7 +159,7 @@ const InputForm = (props) => {
 							onChange={emailChangeHandler}
 						/>
 					</div>
-					<div className="new-expense__control">
+					<div className="user-form__control">
 						<label htmlFor="birthdate">Birthdate</label>
 						<input
 							id="birthdate"
@@ -170,7 +170,7 @@ const InputForm = (props) => {
 						/>
 					</div>
 				</div>
-				<div className="new-expense__actions">
+				<div className="user-form__actions">
 					<button className="reset" type="button" onClick={resetForm}>
 						RESET
 					</button>
