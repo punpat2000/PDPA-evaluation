@@ -171,7 +171,7 @@ const InputForm = (props) => {
 					</div>
 				</div>
 				<div className="user-form__actions">
-					<button className="reset" type="button" onClick={resetForm}>
+					<button className="reset" type="reset" onClick={resetForm}>
 						RESET
 					</button>
 					<button className="analyze" type="submit">
