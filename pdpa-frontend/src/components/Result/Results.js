@@ -1,5 +1,4 @@
 import { useState, memo } from 'react';
-import { MOCK_DATA } from './mock-data';
 import ResultList from './ResultList';
 import SortBtn from './SortBtn';
 import { generateUid } from '../../utils/generate-uid';
@@ -15,8 +14,8 @@ function transform(arr) {
 	});
 }
 
-const Results = () => {
-	const [results, setResults] = useState(transform(MOCK_DATA));
+const Results = (props) => {
+	const [results, setResults] = useState(transform(props.data));
 
 	const sortHandler = (sortBy) => {
 		setResults((prevState) => {
