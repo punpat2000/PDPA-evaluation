@@ -24,7 +24,7 @@ app = FastAPI()
 connection = Connect.get_connection()
 
 class User(BaseModel):
-    #platform: int
+    platform: int
     username: str
     first_name: str | None = None
     last_name: str | None = None
