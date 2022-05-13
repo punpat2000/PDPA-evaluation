@@ -173,7 +173,7 @@ def get_models():
     return vectorizer_1, classifier_1, vectorizer_2, classifier_2
 
 
-@app.post("/")
+@app.post("/query")
 def analyze(user: User):
     #if user.platform == 0:
     tweets_df = scrape_tweets(user.username)
