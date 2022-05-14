@@ -8,24 +8,25 @@ import { MOCK_DATA } from './components/Result/mock-data';
 function App() {
 	const [isLoading, setLoad] = useState(false);
 	const [isAnalyzed, setAnalyze] = useState(false);
-	const [data, setData] = useState({});
+	const [analyzedData, setData] = useState(MOCK_DATA);
 
 	const fetchData = async (data) => {
-		const res = await fetch('http://localhost:3000/query', {
+		const res = await fetch('http://localhost:8000/query', {
 			method: 'POST',
+			mode: 'cors',
 			headers: {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify(data),
 		});
-		return res.json();
+		return await res.json();
 	};
 
 	const submitHandler = async (data) => {
 		setLoad(true);
 		const res = await fetchData(data);
 		console.log(res);
-		// setData(MOCK_DATA);
+		setData(res);
 		setAnalyze(true);
 		setLoad(false);
 	};
@@ -36,7 +37,7 @@ function App() {
 			{!isAnalyzed ? (
 				<InputForm onSubmit={submitHandler} />
 			) : (
-				<Results data={MOCK_DATA} />
+				<Results data={analyzedData} />
 			)}
 		</>
 	);
