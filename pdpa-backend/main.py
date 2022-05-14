@@ -3,6 +3,7 @@ import re
 import numpy as np
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import json
 
@@ -22,6 +23,18 @@ import twint
 
 app = FastAPI()
 connection = Connect.get_connection()
+
+origins = [
+    "http://localhost:3000",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class User(BaseModel):
     platform: int
@@ -190,5 +203,6 @@ def analyze(user: User):
     #print(final_df["predict"])
     #print(final_df["labels"])
     final_df["labels"] = final_df.apply(lambda x: np.append(x["labels"], x["predict"]) if x["predict"] != "none" else x["labels"], axis=1)
+    final_df["labels"] = final_df.apply(lambda x: np.append(x["labels"], "none") if len(x["labels"])==0 else x["labels"], axis=1)
     #print(final_df["labels"])
     return json.loads(final_df[["date", "content", "labels"]].to_json(orient='records', force_ascii=False))
