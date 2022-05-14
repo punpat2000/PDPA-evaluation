@@ -19,7 +19,7 @@ const Results = (props) => {
 
 	const sortHandler = (sortBy) => {
 		setResults((prevState) => {
-			if (sortBy === 'label') {
+			if (sortBy === 'label' || sortBy === 'unsort') {
 				const sortedList = [...prevState].sort(compare);
 
 				if (

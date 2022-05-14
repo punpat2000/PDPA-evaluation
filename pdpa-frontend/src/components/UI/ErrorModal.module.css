@@ -19,13 +19,14 @@
 
 .header {
   background: #4f005f;
-  background: linear-gradient(135deg, rgba(255, 44, 223, 1) 0%, rgba(0, 20, 255, 1) 100%);
+  background-image: linear-gradient(281deg, #420be6, #a16bb3);
   padding: 1rem;
 }
 
 .header h2 {
   margin: 0;
   color: white;
+  text-transform: capitalize;
 }
 
 .content {
@@ -38,6 +39,10 @@
   display: flex;
   justify-content: flex-end;
   background-color: #ffffff;
+}
+
+.actions button {
+  text-transform: uppercase;
 }
 
 @media (min-width: 768px) {
