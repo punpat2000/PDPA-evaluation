@@ -1,11 +1,10 @@
-FROM alpine:3.14 as build-stage
+FROM node:lts-alpine as build-stage
 WORKDIR /usr/src/app
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
-RUN yarn add --dev terser-brunch
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
 COPY . .
-RUN brunch build -p
+RUN yarn build
 
 FROM nginx:stable-alpine
 WORKDIR /usr/share/nginx/html
