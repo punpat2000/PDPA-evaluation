@@ -12,4 +12,6 @@ RUN pip install --user --upgrade git+https://github.com/twintproject/twint.git@o
 
 COPY ./src /code/src
 
+EXPOSE 8001
+
 CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8001"]
