@@ -13,7 +13,7 @@ function App() {
 	const [analyzedData, setData] = useState(MOCK_DATA);
 
 	const fetchData = async (data) => {
-		const res = await fetch('http://localhost:8001/query', {
+		const res = await fetch('http://query', {
 			method: 'POST',
 			mode: 'cors',
 			headers: {
