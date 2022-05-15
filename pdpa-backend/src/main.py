@@ -189,7 +189,12 @@ def get_models():
 @app.post("/query")
 def analyze(user: User):
     #if user.platform == 0:
-    tweets_df = scrape_tweets(user.username)
+    try:
+        tweets_df = scrape_tweets(user.username)
+    except:
+        return []
+    if tweets_df.empty:
+        return []
     content_df = tweets_df.rename(columns={"tweet": "content"})
     content_df["labels"] = find_personal(user, content_df["content"])
     vectorizer_1, classifier_1, vectorizer_2, classifier_2 = get_models()
