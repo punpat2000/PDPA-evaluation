@@ -7,7 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import json
 
-from connect import Connect
+from .connect import Connect
 
 from pythainlp.tokenize import word_tokenize
 from pythainlp.corpus import thai_stopwords, countries, provinces

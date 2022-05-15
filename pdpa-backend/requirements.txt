@@ -5,4 +5,4 @@ pydantic==1.9.0
 pymongo==4.1.0
 pythainlp==3.0.5
 scikit-learn==1.0.2
-twint==2.1.21
+uvicorn==0.15.0
