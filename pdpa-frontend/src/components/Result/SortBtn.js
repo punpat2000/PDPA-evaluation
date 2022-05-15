@@ -1,9 +1,27 @@
+import { useState } from 'react';
 import styles from './Result.module.css';
 
 const SortBtn = (props) => {
+	const [status, setStatus] = useState('sort');
+
 	const sortHandler = () => {
-		props.onSort('label');
+		switch (status) {
+			default:
+			case 'sort': {
+				props.onSort('label');
+				setStatus('unsort');
+				console.log('sort was called');
+				break;
+			}
+			case 'unsort': {
+				props.onSort('unsort');
+				setStatus('sort');
+				break;
+			}
+		}
+		// props.onSort('label');
 	};
+
 	return (
 		<div className={`padding-rule ${styles['sort-holder']}`}>
 			<button
@@ -11,7 +29,7 @@ const SortBtn = (props) => {
 				type="button"
 				onClick={sortHandler}
 			>
-				sort
+				{status}
 			</button>
 		</div>
 	);
