@@ -1,0 +1,8 @@
+pandas==1.4.2
+numpy==1.22.3
+fastapi==0.75.1
+pydantic==1.9.0
+pymongo==4.1.0
+pythainlp==3.0.5
+scikit-learn==1.0.2
+twint==2.1.21
