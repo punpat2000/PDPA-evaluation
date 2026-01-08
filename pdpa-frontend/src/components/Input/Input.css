@@ -1,0 +1,90 @@
+.user-form {
+  background: rgb(41, 42, 60);
+  background: linear-gradient(177deg, rgba(41, 42, 60, 1) 0%, rgba(37, 38, 57, 1) 100%);
+  padding: 1rem;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 0 19px 34px rgba(0, 0, 0, 0.25);
+  animation: card-appear 0.5s ease-out forwards;
+}
+
+.user-form button {
+  font: inherit;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  color: white;
+  border-radius: 12px;
+  max-width: inherit;
+  margin: 0.5rem;
+  transition-duration: 400ms;
+  border-style: none;
+  text-transform: uppercase;
+}
+
+.user-form button:hover {
+  color: #fff;
+  opacity: 1;
+  text-decoration: none;
+}
+
+.user-form .reset {
+  line-height: 1.5;
+  text-align: center;
+  box-sizing: border-box;
+  background-clip: padding-box !important;
+  border-radius: 24px;
+  color: #fff;
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.8;
+  outline: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: opacity 0.2s linear;
+  background-image: none !important;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.user-form .analyze {
+  line-height: 1.5;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: transparent;
+  background-clip: padding-box !important;
+  background-image: linear-gradient(281deg, #420be6, #a16bb3);
+  background-size: 101%;
+  border: 1px solid transparent;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px 0 rgba(111, 57, 205, 0.3);
+  color: #fff;
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.8;
+  outline: none;
+  text-decoration: none;
+}
+
+.user-form .button.alternative {
+  color: #220131;
+  background-color: transparent;
+}
+
+.user-form .button.alternative:hover,
+.user-form .button.alternative:active {
+  background-color: #ddb3f8;
+}
+
+@keyframes card-appear {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

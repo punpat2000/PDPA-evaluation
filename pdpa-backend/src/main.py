@@ -3,10 +3,11 @@ import re
 import numpy as np
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import json
 
-from connect import Connect
+from .connect import Connect
 
 from pythainlp.tokenize import word_tokenize
 from pythainlp.corpus import thai_stopwords, countries, provinces
@@ -22,6 +23,18 @@ import twint
 
 app = FastAPI()
 connection = Connect.get_connection()
+
+origins = [
+    "http://localhost:3000",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class User(BaseModel):
     platform: int
@@ -176,7 +189,12 @@ def get_models():
 @app.post("/query")
 def analyze(user: User):
     #if user.platform == 0:
-    tweets_df = scrape_tweets(user.username)
+    try:
+        tweets_df = scrape_tweets(user.username)
+    except:
+        return []
+    if tweets_df.empty:
+        return []
     content_df = tweets_df.rename(columns={"tweet": "content"})
     content_df["labels"] = find_personal(user, content_df["content"])
     vectorizer_1, classifier_1, vectorizer_2, classifier_2 = get_models()
@@ -190,5 +208,6 @@ def analyze(user: User):
     #print(final_df["predict"])
     #print(final_df["labels"])
     final_df["labels"] = final_df.apply(lambda x: np.append(x["labels"], x["predict"]) if x["predict"] != "none" else x["labels"], axis=1)
+    final_df["labels"] = final_df.apply(lambda x: np.append(x["labels"], "none") if len(x["labels"])==0 else x["labels"], axis=1)
     #print(final_df["labels"])
     return json.loads(final_df[["date", "content", "labels"]].to_json(orient='records', force_ascii=False))
