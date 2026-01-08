@@ -13,15 +13,29 @@ function App() {
 	const [analyzedData, setData] = useState(MOCK_DATA);
 
 	const fetchData = async (data) => {
-		const res = await fetch('http://query', {
-			method: 'POST',
-			mode: 'cors',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(data),
-		});
-		return await res.json();
+		// OLD API CALL - COMMENTED OUT
+		// const res = await fetch('http://query', {
+		// 	method: 'POST',
+		// 	mode: 'cors',
+		// 	headers: {
+		// 		'Content-Type': 'application/json',
+		// 	},
+		// 	body: JSON.stringify(data),
+		// });
+		// return await res.json();
+
+		// Mock API response - simulate network delay
+		await new Promise(resolve => setTimeout(resolve, 1500));
+		
+		// Return mock data based on input
+		// You can customize this to return different mock data based on the input
+		const mockResponse = MOCK_DATA.map(item => ({
+			...item,
+			// Optionally filter or modify based on input data
+			// For now, just return the mock data as-is
+		}));
+		
+		return mockResponse;
 	};
 
 	const submitHandler = async (data) => {
